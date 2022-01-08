@@ -21,11 +21,11 @@ class AlarmReceiver : BroadcastReceiver() {
                 repeatDaily = intent?.getBooleanExtra(AlarmUtils.ALARM_ARG_REPEAT, false) ?: false,
             )
             NotificationUtils.showAlarmNotification(context, alarmUiModel)
-            removeAlarmInDb(context, alarmUiModel)
+            removeAlarm(context, alarmUiModel)
         }
     }
 
-    private fun removeAlarmInDb(context: Context, alarmUiModel: AlarmUiModel) {
+    private fun removeAlarm(context: Context, alarmUiModel: AlarmUiModel) {
         if (alarmUiModel.repeatDaily) {
             return
         }
