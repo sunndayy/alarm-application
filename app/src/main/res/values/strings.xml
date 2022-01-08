@@ -2,4 +2,5 @@
     <string name="app_name">Alarm Application</string>
     <string name="add_alarm_button_text">Add alarm</string>
     <string name="repeat_daily_text">Repeat daily</string>
+    <string name="set_up_toolbar_title">Set up alarm</string>
 </resources>

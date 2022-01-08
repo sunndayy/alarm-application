@@ -9,7 +9,7 @@ data class AlarmUiModel(
     val repeatDaily: Boolean
 )
 
-fun AlarmUiModel.toEntity() : AlarmEntity {
+fun AlarmUiModel.toEntity(): AlarmEntity {
     return AlarmEntity(
         id = this.id,
         hour = this.hour,
@@ -18,7 +18,7 @@ fun AlarmUiModel.toEntity() : AlarmEntity {
     )
 }
 
-fun getAlarmUiModel(entity: AlarmEntity) : AlarmUiModel {
+fun getAlarmUiModel(entity: AlarmEntity): AlarmUiModel {
     return AlarmUiModel(
         id = entity.id,
         hour = entity.hour,

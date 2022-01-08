@@ -3,8 +3,7 @@ package com.alarmapplication.presentation.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Switch
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.alarmapplication.R
@@ -63,7 +62,7 @@ class AlarmsAdapter(
         fun bindView(item: AlarmListItemModel) {
             itemView.findViewById<TextView>(R.id.tvAlarmTime).text = item.time
             itemView.findViewById<TextView>(R.id.tvRepeatMode).text = item.repeatDaily
-            itemView.findViewById<Button>(R.id.btnCancel).setOnClickListener {
+            itemView.findViewById<ImageView>(R.id.btnRemove).setOnClickListener {
                 listener.onClick(adapterPosition)
             }
         }

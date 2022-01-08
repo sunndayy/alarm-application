@@ -41,7 +41,7 @@ class SetUpAlarmActivity : AppCompatActivity() {
 
     private fun initView() {
         binding.btnAddAlarm.setOnClickListener { onAddAlarmClick() }
-        binding
+        binding.btnBack.setOnClickListener { finish() }
     }
 
     private fun onAddAlarmClick() {
@@ -53,7 +53,10 @@ class SetUpAlarmActivity : AppCompatActivity() {
         )
         setUpAlarmViewModel.addAlarm(alarmUIModel)
         AlarmUtils.scheduleAlarm(this, alarmUIModel)
-        ToastUtils.showToast(this, String.format("Set up alarm at ${alarmUIModel.hour}:${alarmUIModel.minute}"))
+        ToastUtils.showToast(
+            this,
+            String.format("Set up alarm at ${alarmUIModel.hour}:${alarmUIModel.minute}")
+        )
         finish()
     }
 }

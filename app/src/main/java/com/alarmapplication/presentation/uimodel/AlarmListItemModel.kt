@@ -14,7 +14,7 @@ fun getAlarmListItemModel(item: AlarmUiModel): AlarmListItemModel {
         id = item.id,
         time = "${item.hour}:${item.minute}",
         repeatDaily = if (item.repeatDaily) REPEAT_DAILY else NO_REPEAT
-     )
+    )
 }
 
 fun AlarmListItemModel.toAlarmUiModel(): AlarmUiModel {

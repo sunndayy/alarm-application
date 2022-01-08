@@ -8,7 +8,6 @@ import com.alarmapplication.common.AlarmUtils
 import com.alarmapplication.common.NotificationUtils
 import com.alarmapplication.presentation.uimodel.AlarmUiModel
 import com.alarmapplication.presentation.uimodel.toEntity
-import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -30,7 +29,8 @@ class AlarmReceiver : BroadcastReceiver() {
         if (alarmUiModel.repeatDaily) {
             return
         }
-        val removeAlarmUseCase = (context.applicationContext as AndroidApplication).appComponent.removeAlarmUseCase
+        val removeAlarmUseCase =
+            (context.applicationContext as AndroidApplication).appComponent.removeAlarmUseCase
         GlobalScope.launch {
             removeAlarmUseCase(alarmUiModel.toEntity())
         }
